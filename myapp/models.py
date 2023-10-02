@@ -1,16 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Evento(models.Model):
     nome = models.CharField(max_length=200)
     date_pub = models.DateTimeField("My datetime")
     organizador = models.ForeignKey(
-        'User',
+        User,
         on_delete=models.CASCADE,
     )
 
 class Palestrante(models.Model):
     user_id = models.ForeignKey(
-        "Users",
+        User,
         on_delete=models.CASCADE,
     )
 class Atividade(models.Model):
@@ -27,7 +28,7 @@ class Atividade(models.Model):
 
 class Participante(models.Model):
     user = models.ForeignKey(
-        'Users',
+        User,
         on_delete=models.CASCADE,
     )
     Atividade = models.ForeignKey(
