@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from myapp.views import index, cadastrar_usuario
+from myapp.views import index, cadastrar_usuario, logar_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastrar_usuario/', cadastrar_usuario, name="cadastrar_usuario"),
+    path('login/', logar_usuario, name="login"),
     path('', index, name="index"),
 ]
