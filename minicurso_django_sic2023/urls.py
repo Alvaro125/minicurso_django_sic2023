@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from myapp.views import index
+from myapp.views import index, cadastrar_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cadastrar_usuario/', cadastrar_usuario, name="cadastrar_usuario"),
     path('', index, name="index"),
 ]
